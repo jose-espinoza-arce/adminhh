@@ -1,0 +1,53 @@
+<header class="site-head">
+      <div class="site-head__nav"><a href="/" class="site-head__logo">HausHaus</a>
+       {%if user.is_authenticated%}
+       <span class="nav-trigger fa fa-bars"></span>
+        {% endif %}
+       </div>
+      
+      <div class="site-head__wrap">
+       
+        <nav class="list-unstyled head-nav">
+            {% if user.is_authenticated %}
+          <li class="head-nav__item head-nav__item--notification"><a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="head-nav__option head-nav__option--notification"><i class="fa fa-bell-o option__icon"></i><span class="badge badge-danger badge-xs">3</span></a>
+            <div class="panel panel-default dropdown-menu">
+              <div class="panel-heading">
+                <p class="panel-title">You have : <strong>3</strong> new notifications</p>
+              </div>
+              <ul class="list-unstyled noti-menu">
+                <li class="noti-menu__item"><a href="#" class="noti-menu__message clearfix"><i class="fa fa-bolt noti-menu__message__type left"></i>
+                    <div class="noti-menu__message__body left"><strong class="noti-menu__message__title">New app updated</strong><span class="small">few secs ago</span></div></a></li>
+                <li class="noti-menu__item"><a href="#" class="noti-menu__message clearfix"><i class="fa fa-info noti-menu__message__type left"></i>
+                    <div class="noti-menu__message__body left"><strong class="noti-menu__message__title">Jhon left message</strong><span class="small">3 min ago</span></div></a></li>
+                <li class="noti-menu__item"><a href="#" class="noti-menu__message clearfix"><i class="fa fa-bolt noti-menu__message__type left"></i>
+                    <div class="noti-menu__message__body left"><strong class="noti-menu__message__title">New app updated</strong><span class="small">2 hours ago</span></div></a></li>
+              </ul>
+              <div class="panel-footer">
+                <p class="small zero"><a href="#">View all notifications</a><i class="fa fa-circle-o-notch right"></i></p>
+              </div>
+            </div>
+          </li>
+          <li class="head-nav__item head-nav__item--profile dropdown" ng-controller="NavbarController as vm"><a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="head-nav__option head-nav__option--profile"><img src="static/images/male-avatar.jpg" alt="" class="img-circle option__profile"></a>
+            <div class="panel panel-default dropdown-menu">
+              <div class="panel-body">
+                <figure class="profile__photo left"><img src="static/images/male-avatar.jpg" alt="" class="img-responsive"><a href="#">Foto</a></figure>
+                <div class="profile__info right">
+                  <p><strong>{{user.username}}</strong></p>
+                  <p>{{user.email}}</p><a href="#" class="btn btn-primary btn-xs">Ver Perfil</a>
+                </div>
+              </div>
+              <div class="panel-footer clearfix"><a href="/+{{ user.username }}/settings" class="btn btn-default btn-sm left">Cuenta</a><a href="#" class="btn btn-default btn-sm btn-primary right" ng-click="vm.logout()">Cerrar Sesión</a></div>
+            </div>
+          </li>
+              <li class="head-nav__item" ><a href="/login">Ingresar</a></li>
+            <li class="head-nav__item"><a href="/register">Registrar</a></li>
+          {% else %}
+          
+            <li class="head-nav__item" ><a href="/login">Ingresar</a></li>
+            <li class="head-nav__item"><a href="/register">Registrar</a></li>
+    
+         {% endif %}
+        </nav>
+      </div>
+          
+    </header>

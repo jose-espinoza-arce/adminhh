@@ -37,3 +37,6 @@ statici
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+#vim components
+.ropeproject
