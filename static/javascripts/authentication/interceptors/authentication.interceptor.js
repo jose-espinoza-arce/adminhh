@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('thinkster.authentication.interceptors')
+    .module('mx.haushaus.authentication.interceptors')
     .factory('AuthInterceptor', AuthInterceptor);
 
   AuthInterceptor.$inject = ['$injector', '$location'];

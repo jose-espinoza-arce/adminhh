@@ -1,12 +1,12 @@
 /**
  * ProfileS3ettingsController
- * @namespace thinkster.profiles.controllers
+ * @namespace mx.haushaus.profiles.controllers
  */
 (function () {
   'use strict';
 
   angular
-    .module('thinkster.profiles.controllers')
+    .module('mx.haushaus.profiles.controllers')
     .controller('ProfileSettingsController', ProfileSettingsController);
 
   ProfileSettingsController.$inject= [
@@ -65,7 +65,7 @@
     /**
      * @name destroy
      * @desc desctro this user's profile
-     * @memberOf thinkster.profiles.controllers.ProfileSettingsController
+     * @memberOf mx.haushaus.profiles.controllers.ProfileSettingsController
      */
     function destroy() {
       Profile.destroy(vm.profile.username).then(profiloeSuccessFn, profileErrorFn);
@@ -96,7 +96,7 @@
     /**
      * @name update
      * @desc update this user's profile
-     * @memberOf thinkster.profiles.controllers.ProfileSettins Controller
+     * @memberOf mx.haushaus.profiles.controllers.ProfileSettins Controller
      */
     function update() {
       Profile.update(vm.profile).then(profileSuccessFn, profileErrorFn);

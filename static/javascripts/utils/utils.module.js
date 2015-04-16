@@ -2,10 +2,10 @@
   'use strict';
 
   angular
-    .module('thinkster.utils', [
-      'thinkster.utils.services'
+    .module('mx.haushaus.utils', [
+      'mx.haushaus.utils.services'
     ]);
 
   angular
-    .module('thinkster.utils.services', []);
+    .module('mx.haushaus.utils.services', []);
 })();

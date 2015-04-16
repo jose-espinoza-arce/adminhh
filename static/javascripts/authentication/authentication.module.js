@@ -2,18 +2,18 @@
   'use strict';
 
   angular
-    .module('thinkster.authentication', [
-      'thinkster.authentication.controllers',
-      'thinkster.authentication.services',
-      'thinkster.authentication.interceptors'
+    .module('mx.haushaus.authentication', [
+      'mx.haushaus.authentication.controllers',
+      'mx.haushaus.authentication.services',
+      'mx.haushaus.authentication.interceptors'
     ]);
 
   angular
-    .module('thinkster.authentication.controllers', []);
+    .module('mx.haushaus.authentication.controllers', []);
 
   angular
-    .module('thinkster.authentication.services', ['ngCookies']);
+    .module('mx.haushaus.authentication.services', ['ngCookies']);
 
   angular
-    .module('thinkster.authentication.interceptors', []);
+    .module('mx.haushaus.authentication.interceptors', []);
 })();

@@ -2,18 +2,18 @@
   'use strict';
 
   angular
-    .module('thinkster.posts', [
-      'thinkster.posts.controllers',
-      'thinkster.posts.directives',
-      'thinkster.posts.services'    
+    .module('mx.haushaus.posts', [
+      'mx.haushaus.posts.controllers',
+      'mx.haushaus.posts.directives',
+      'mx.haushaus.posts.services'    
     ]);
 
   angular
-    .module('thinkster.posts.controllers', []);
+    .module('mx.haushaus.posts.controllers', []);
 
   angular
-    .module('thinkster.posts.directives', ['ngDialog']);
+    .module('mx.haushaus.posts.directives', ['ngDialog']);
 
   angular
-    .module('thinkster.posts.services', []);
+    .module('mx.haushaus.posts.services', []);
 })();

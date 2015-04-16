@@ -1,12 +1,12 @@
 /**
 * NewPostController
-* @namespace thinkster.posts.controllers
+* @namespace mx.haushaus.posts.controllers
 */
 (function () {
   'use strict';
 
   angular
-    .module('thinkster.posts.controllers')
+    .module('mx.haushaus.posts.controllers')
     .controller('NewPostController', NewPostController);
 
   NewPostController.$inject = ['$rootScope', '$scope', 'Authentication', 'Snackbar', 'Posts'];
@@ -22,7 +22,7 @@
     /**
     * @name submit
     * @desc Create a new Post
-    * @memberOf thinkster.posts.controllers.NewPostController
+    * @memberOf mx.haushaus.posts.controllers.NewPostController
     */
     function submit() {
       $rootScope.$broadcast('post.created', {

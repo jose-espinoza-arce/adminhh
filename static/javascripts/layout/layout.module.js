@@ -2,10 +2,10 @@
   'use strict';
 
   angular
-    .module('thinkster.layout', [
-      'thinkster.layout.controllers'    
+    .module('mx.haushaus.layout', [
+      'mx.haushaus.layout.controllers'    
     ]);
 
   angular
-    .module('thinkster.layout.controllers', []);
+    .module('mx.haushaus.layout.controllers', []);
 })();

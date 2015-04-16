@@ -2,14 +2,14 @@
   'use strict';
 
   angular
-    .module('thinkster.profiles', [
-      'thinkster.profiles.controllers',
-      'thinkster.profiles.services'    
+    .module('mx.haushaus.profiles', [
+      'mx.haushaus.profiles.controllers',
+      'mx.haushaus.profiles.services'    
     ]);
 
   angular
-    .module('thinkster.profiles.controllers', []);
+    .module('mx.haushaus.profiles.controllers', []);
 
   angular
-    .module('thinkster.profiles.services', []);
+    .module('mx.haushaus.profiles.services', []);
 })();

@@ -38,5 +38,8 @@ statici
 ehthumbs.db
 Thumbs.db
 
-#vim components
+#vim componentsi
 .ropeproject
+
+#python compiled files
+*.pyc

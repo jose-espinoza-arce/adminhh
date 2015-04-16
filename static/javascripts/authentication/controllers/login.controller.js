@@ -1,12 +1,12 @@
 /**
  * LoginController
- * @namespace thinkster.authentication.controllers
+ * @namespace mx.haushaus.authentication.controllers
  */
 (function () {
   'use strict';
 
   angular
-    .module('thinkster.authentication.controllers')
+    .module('mx.haushaus.authentication.controllers')
     .controller('LoginController', LoginController);
 
   LoginController.$inject = ['$location', '$scope', 'Authentication'];
@@ -24,7 +24,7 @@
     /**
      * @name activate
      * @desc Actions to be performed when this controller is instantiated
-     * @memberof thinkster. authentication.contrololers.LoginController
+     * @memberof mx.haushaus. authentication.contrololers.LoginController
      */
     function activate() {
       //if the user is authenticated thy should not be here, fuera, fuera!  
@@ -36,7 +36,7 @@
     /**
      * @name login
      * @desc Log the user in
-     * @memberof thinkster.auntehntication.controllers.LoginController
+     * @memberof mx.haushaus.auntehntication.controllers.LoginController
      */
     function login() {
       Authentication.login(vm.email, vm.password);

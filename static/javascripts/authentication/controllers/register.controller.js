@@ -1,12 +1,12 @@
 /**
 * Register controller
-* @namespace thinkster.authentication.controllers
+* @namespace mx.haushaus.authentication.controllers
 */
 (function () {
   'use strict';
 
   angular
-    .module('thinkster.authentication.controllers')
+    .module('mx.haushaus.authentication.controllers')
     .controller('RegisterController', RegisterController);
 
   RegisterController.$inject = ['$location', '$scope', 'Authentication'];
@@ -24,7 +24,7 @@
     /**
      * @name activate
      * @desc Actions to be performed when this controller is instantiated
-     * @memberof thinkster.authentication.controllers.RegisterController
+     * @memberof mx.haushaus.authentication.controllers.RegisterController
      */
     function activate() {
       // if the user is authenticated they should not be here.
@@ -36,7 +36,7 @@
     /**
     * @name register
     * @desc Register a new user
-    * @memberOf thinkster.authentication.controllers.RegisterController
+    * @memberOf mx.haushaus.authentication.controllers.RegisterController
     */
     function register() {
       Authentication.register(vm.email, vm.password, vm.username);
