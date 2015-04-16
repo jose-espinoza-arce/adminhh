@@ -85,8 +85,10 @@
        * @name registerSuccessFn
        * @desc Log the new user in.
        */
-      function registerSuccessFn() {
-        Authentication.login(email, password);
+      function registerSuccessFn(data, status, headers, config) {
+        console.log('desde el callback exito-registro')
+        console.log(data)
+        //Authentication.login(email, password);
       }
 
       /**

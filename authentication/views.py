@@ -1,4 +1,6 @@
+# -*- coding: utf-8 -*-
 import json
+import re
 
 from django.contrib.auth import authenticate, login, logout
 
@@ -102,6 +104,28 @@ class AccountViewSet(viewsets.ModelViewSet):
         return (permissions.IsAuthenticated(), IsAccountOwner(),)
 
     def create(self, request):
+        print request.data
+        errors = []
+        if Account.objects.filter(email=request.data['email']).exists():
+            errors.append({
+                'type': 'email',
+                'message': 'Ya existe este correo electrónico'
+            })
+        if Account.objects.filter(username=request.data['username']).exists():
+            errors.append({
+                'type': 'username',
+                'message': 'Ya existe este nombre de usuario di'
+            })
+
+        if not re.match(r'[A-Za-z0-9]{8,}', request.data['password']):
+            errors.append({
+                'type': 'contraseña',
+                'message': 'Contraseña no válida, debe conmtener almenos 8 caractéres con números y letras mayúsculas y minúsculas'
+            })
+
+        if errors:
+            return Response(errors, status=status.HTTP_400_BAD_REQUEST)
+
         serializer = self.serializer_class(data=request.data)
 
         if serializer.is_valid():
