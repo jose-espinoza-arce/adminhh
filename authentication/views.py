@@ -124,7 +124,7 @@ class AccountViewSet(viewsets.ModelViewSet):
             })
 
         if errors:
-            return Response(errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'errors': errors}, status=status.HTTP_400_BAD_REQUEST)
 
         serializer = self.serializer_class(data=request.data)
 

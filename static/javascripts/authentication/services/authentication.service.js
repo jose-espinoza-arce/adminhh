@@ -86,17 +86,22 @@
        * @desc Log the new user in.
        */
       function registerSuccessFn(data, status, headers, config) {
-        console.log('desde el callback exito-registro')
-        console.log(data)
-        //Authentication.login(email, password);
+        //console.log('desde el callback exito-registro')
+        //console.log(data.data);
+        if (!data.data.errors) {
+	  Authentication.login(email, password);	
+	} else {
+          return $q.reject(registerErrorFn(data));	  
+	}
       }
 
       /**
        * @name registerErrorFn
        * @desc Log 'Error en el registro!' to the console.
        */
-      function registerErrorFn() {
+      function registerErrorFn(data) {
         console.error('Error en el registro!');
+	console.log(data.data.errors);
       }
     }
 
@@ -120,15 +125,15 @@
        */
       function loginSuccessFn(data, status, headers, config) {
         //Authentication.setAuthenticatedAccount(data.data);
-        console.log('desde el callback de exito: ');
-        console.log(data);
+        //console.log('desde el callback de exito: ');
+        //console.log(data);
         if (data.data.token) {
           console.log(data);          
           Authentication.setUsername(data.data.username);
           Authentication.setToken(data.data.token);
           window.location='/';
         } else {
-          console.log('en el reject')
+          //console.log('en el reject')
           return $q.reject(loginErrorFn(data));
         }
 
