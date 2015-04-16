@@ -33,7 +33,7 @@
                 <figure class="profile__photo left"><img src="static/images/male-avatar.jpg" alt="" class="img-responsive"><a href="#">Foto</a></figure>
                 <div class="profile__info right">
                   <p><strong>{{user.username}}</strong></p>
-                  <p>{{user.email}}</p><a href="#" class="btn btn-primary btn-xs">Ver Perfil</a>
+		  <p>{{user.email}}</p><a href="/+{{user.username}}" class="btn btn-primary btn-xs">Ver Perfil</a>
                 </div>
               </div>
               <div class="panel-footer clearfix"><a href="/+{{ user.username }}/settings" class="btn btn-default btn-sm left">Cuenta</a><a href="#" class="btn btn-default btn-sm btn-primary right" ng-click="vm.logout()">Cerrar Sesión</a></div>
