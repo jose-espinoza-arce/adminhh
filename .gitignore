@@ -43,3 +43,6 @@ Thumbs.db
 
 #python compiled files
 *.pyc
+
+#swp files
+*.swp
