@@ -63,7 +63,9 @@
     */
     function update(profile) {
       console.log(profile);
-      return $http.put('/api/v1/accounts/' + profile.username + '/', profile);
+      //username = window.localStorage.getItem('username');
+      //console.log(username);
+      return $http.put('/api/v1/accounts/' + window.localStorage.getItem('username') + '/', profile);
     }
   }
 })();
