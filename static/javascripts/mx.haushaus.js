@@ -15,7 +15,7 @@
   angular
     .module('mx.haushaus.config', []);
   angular
-    .module('mx.haushaus.routes', ['ngRoute']);
+    .module('mx.haushaus.routes', ['ngRoute', 'ui.router']);
 
   angular
       .module('mx.haushaus')

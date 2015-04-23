@@ -104,6 +104,11 @@ class AccountViewSet(viewsets.ModelViewSet):
         return (permissions.IsAuthenticated(), IsAccountOwner(),)
 
     def create(self, request):
+        """
+
+        :param request:
+        :return: data serializer
+        """
         print request.data
         errors = []
         if Account.objects.filter(email=request.data['email']).exists():
@@ -145,7 +150,19 @@ class AccountViewSet(viewsets.ModelViewSet):
         print instance.__dict__
         serializer = self.get_serializer(instance, data=request.data, partial=partial)
         serializer.is_valid(raise_exception=True)
-        #self.perform_update(serializer)
+        self.perform_update(serializer)
+        print serializer.data
+        token_serializer = LoginJWTView.serializer_class(data=serializer.data)
+        print token_serializer
+        if token_serializer.is_valid():
+            user = serializer.object.get('user') or request.user
+            #print user
+            #login(request, user)
+            token = serializer.object.get('token')
+            #print token
+            response_token_data = jwt_response_payload_handler(token, user, request)
+            print response_token_data
+
         return Response(serializer.data)
 
 # Create your views here.

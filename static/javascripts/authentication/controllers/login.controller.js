@@ -19,6 +19,15 @@
 
     vm.login = login;
 
+    /*$scope.credentials={
+        email: '',
+        password: ''
+    };
+    $scope.credentialsDefault = {
+        email: '',
+        password: ''
+    };*/
+
     activate();
 
     /**
@@ -39,7 +48,7 @@
      * @memberof mx.haushaus.auntehntication.controllers.LoginController
      */
     function login() {
-      Authentication.login(vm.email, vm.password);
+      Authentication.login(vm.credentials.email, vm.credentials.password);
     }
   }
 })();
