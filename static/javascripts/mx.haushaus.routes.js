@@ -12,7 +12,7 @@
   * @desc Define valid application routes
   */
   function config($routeProvider, $stateProvider, $urlRouterProvider) {
-    /*
+
       $urlRouterProvider.otherwise('/');
 
     $stateProvider
@@ -31,7 +31,7 @@
       .state('index', {
         url: '/',
         controller: 'IndexController',
-       // controllerAs: 'vm',
+        controllerAs: 'vm',
         templateUrl: '/static/templates/layout/index.html'
       })
       .state('profile', {
@@ -46,10 +46,10 @@
         controllerAs: 'vm',
         templateUrl: '/static/templates/profiles/settings.html'
       });
-*/
 
 
 
+/*
     $routeProvider.when('/register', {
       controller: 'RegisterController', 
       controllerAs: 'vm',
@@ -71,6 +71,6 @@
       controllerAs: 'vm',
       templateUrl: '/static/templates/profiles/settings.html'
     }).otherwise('/');
-
+*/
   }
 })();

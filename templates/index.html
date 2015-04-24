@@ -12,7 +12,7 @@
   
   {% include 'header.html' %}
 
-    <div class="main-container clearfix">
+    <div class="main-container clearfix" >
         {% if user.is_authenticated %}
         {% include 'sidebar.html' %}
         {% endif %}
@@ -20,8 +20,8 @@
             <div class="page">
                 <div class="page-head"></div>
                 <div class="page-wrap">
-                    <div class="row">
-                        <div class="col-lg-12"><div ng-view></div></div>
+                    <div class="row" >
+                        <div class="col-lg-12"><div ui-view></div></div>
                     </div>
                 </div>
             </div>        

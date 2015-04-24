@@ -10,13 +10,13 @@
     .controller('ProfileSettingsController', ProfileSettingsController);
 
   ProfileSettingsController.$inject= [
-    '$location', '$routeParams', 'Authentication', 'Profile', 'Snackbar'  
+    '$location', '$stateParams', 'Authentication', 'Profile', 'Snackbar'
   ];
 
   /**
    * @namesapce ProfileSettingsController
    */
-  function ProfileSettingsController($location, $routeParams, Authentication, Profile, Snackbar) {
+  function ProfileSettingsController($location, $stateParams, Authentication, Profile, Snackbar) {
     var vm = this;
 
     vm.destroy = destroy;
@@ -26,7 +26,7 @@
 
     function activate() {
       var token = Authentication.getToken();
-      var username_url = $routeParams.username.substr(1);
+      var username_url = $stateParams.username;
       var username = Authentication.getUsername();
 
       //redirect if not logged in

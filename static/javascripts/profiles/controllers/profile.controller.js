@@ -9,12 +9,12 @@
     .module('mx.haushaus.profiles.controllers')
     .controller('ProfileController', ProfileController);
 
-  ProfileController.$inject = ['$location', 'Authentication', '$routeParams', 'Posts', 'Profile', 'Snackbar'];
+  ProfileController.$inject = ['$location', 'Authentication', '$stateParams', 'Posts', 'Profile', 'Snackbar'];
 
   /**
   * @namespace ProfileController
   */
-  function ProfileController($location, Authentication, $routeParams, Posts, Profile, Snackbar) {
+  function ProfileController($location, Authentication, $stateParams, Posts, Profile, Snackbar) {
     var vm = this;
 
     vm.profile = undefined;
@@ -28,7 +28,7 @@
     * @memberOf mx.haushaus.profiles.controllers.ProfileController
     */
     function activate() {
-      var username = $routeParams.username.substr(1);
+      var username = $stateParams.username;
 
       Profile.get(username).then(profileSuccessFn, profileErrorFn);
       Posts.get(username).then(postsSuccessFn, postsErrorFn);
